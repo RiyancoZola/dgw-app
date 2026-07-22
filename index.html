@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta title="DGW App Redirect">
+    <!-- 1. Browser Tab Name -->
+    <title>DGW Official App</title>
+
+    <!-- 2. Web & App Preview Metadata (Open Graph Tags) -->
+    <meta property="og:title" content="DGW Official App" />
+    <meta property="og:description" content="Download the DGW Mobile App for Android and iOS." />
+    <meta name="apple-mobile-web-app-title" content="DGW App" />
+
     <script>
         window.onload = function() {
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
             
-            // Android Link
             var androidUrl = "https://play.google.com/store/apps/details?id=com.pt_dgw.dgw&pcampaignid=web_share";
-            // iOS Link (Replace with your actual App Store link when ready)
             var iosUrl = "https://apps.apple.com/us/app/dgw-solution/id6737177527"; 
 
             if (/android/i.test(userAgent)) {
@@ -16,13 +21,12 @@
             } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
                 window.location.href = iosUrl;
             } else {
-                // If scanned from PC or unknown device, show both options
                 document.getElementById("manual-links").style.display = "block";
             }
         };
     </script>
 </head>
-<body style="font-family: sans-serif; text-align: center; padding-top: 50px;">
+    <body style="font-family: sans-serif; text-align: center; padding-top: 50px;">
     <h2>Redirecting to DGW App...</h2>
     <div id="manual-links" style="display:none;">
         <p><a href="https://play.google.com/store/apps/details?id=com.pt_dgw.dgw&pcampaignid=web_share">Download for Android (Google Play)</a></p>
